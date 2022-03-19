@@ -1,0 +1,6 @@
+dct = dict({'one': 1, 'two': 2, 'thee': 3, 'four': 4, 'five': 5})
+nw={}
+for k, v in dct.items():
+    if v<3: continue
+    else: nw[k]=v
+print(nw)
