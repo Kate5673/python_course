@@ -1,0 +1,48 @@
+class Animal:
+    def voice(self):
+        pass
+
+class Cats(Animal):
+    def __init__(self, voice, age):
+        self.voice=voice
+        self.age=age
+
+    def __str__(self):
+        return 'Pets voise is ' + self.voice + '. Pet ' + str(self.age) + ' years old.'
+
+
+
+class Dogs(Animal):
+    def __init__(self, voice, name):
+        self.voice=voice
+        self.name=name
+
+    def __str__(self):
+        return 'Pets name is ' + self.name + '. His voice is ' + self.voice + '.'
+
+
+class Rat(Animal):
+    def __init__(self, voice, weight):
+        self.voice=voice
+        self.weight=weight
+
+    def __str__(self):
+        return 'Pets voise is ' + self.voice + '. Pet weight is ' + str(self.weight) + '.'
+
+    def  dislike(self,  dislike):
+        self.dislike=int(input('На сколько вы не любите крыс от 0 до 10? '))
+        if  dislike>=5:
+            print('Together with you do not like rats for ' + str(self.dislike) +' more at least 47 people')
+        elif dislike<5:
+            print('You love rats')
+
+
+
+a=Cats('MIAY', 9)
+print(a)
+d=Dogs('GAV', 'Bunny')
+print(d)
+r=Rat('pipi', 145)
+print(r)
+r.dislike(7)
+print(r)
