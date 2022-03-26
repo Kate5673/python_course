@@ -1,0 +1,62 @@
+class Animal:
+    num_of_insts = 0
+    def voice(self):
+        pass
+
+    def __init__(self):
+        Animal.num_of_insts=Animal.num_of_insts +1
+
+    def print_num():
+        print('Number of instances called: ' + str(Animal.num_of_insts))
+
+    print_num=staticmethod(print_num)
+
+class Cats(Animal):
+    def __init__(self, voice, age):
+        super().__init__()
+        self.voice=voice
+        self.age=age
+
+    def __str__(self):
+        return 'Pets voise is ' + self.voice + '. Pet ' + str(self.age) + ' years old.'
+
+
+class Dogs(Animal):
+    def __init__(self, voice, name):
+        super().__init__()
+        self.voice=voice
+        self.name=name
+
+    def __str__(self):
+        return 'Pets name is ' + self.name + '. His voice is ' + self.voice + '.'
+
+
+class Rat(Animal):
+    def __init__(self, voice, weight):
+        super().__init__()
+        self.voice=voice
+        self.weight=weight
+
+    def __str__(self):
+        return 'Pets voise is ' + self.voice + '. Pet weight is ' + str(self.weight) + '.'
+
+    def  dislike(self,  dislike):
+        self.dislike=int(input('На сколько вы не любите крыс от 0 до 10? '))
+        if  dislike>=5:
+            print('Together with you do not like rats for ' + str(self.dislike) +' more at least 47 people')
+        elif dislike<5:
+            print('You love rats')
+
+
+
+a=Cats('MIAY', 9)
+print(a)
+d=Dogs('GAV', 'Bunny')
+print(d)
+r=Rat('pipi', 145)
+print(r)
+r.dislike(7)
+print(r)
+
+a=Animal()
+a.print_num()
