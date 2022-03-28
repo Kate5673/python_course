@@ -1,0 +1,24 @@
+def rev(i):
+    return i[::-1]
+
+with open('\\Users\\EKurlykina\\Desktop\\loxx.txt', 'r') as f:
+    print(f.read())
+
+with open('\\Users\\EKurlykina\\Desktop\\loxx.txt', 'r') as f:
+    newstr = f.readlines()
+
+with open('newfile.txt', 'w') as neww:
+    neww.writelines(newstr)
+
+with open('newfile.txt', 'r') as neww:
+    newr = neww.readlines()
+
+with open('newfile.txt', 'w') as neww:
+    #neww.writelines(newr)
+    for x in range(0,len(newr)):
+        newr[x] = rev(newr[x])
+    neww.writelines(newr)
+
+with open('newfile.txt', 'r') as new:
+    print(new.read())
+
