@@ -1,0 +1,26 @@
+import  threading
+import time
+
+class MyThread(threading.Thread):
+    def __init__(self, interval):
+        threading.Thread.__init__(self)
+        self.daemon=True
+        self.interval=interval
+
+    def run(self):
+        for i in range(10,0,-1):
+            print('number: ' + str(i))
+            time.sleep(self.interval)
+
+t1=MyThread(1)
+print('я не смогла назвать поток класса, поэтому он безымянный')
+print(t1.ident)
+t1.start()
+t1.join()
+
+
+t2=MyThread(1)
+print('я не смогла назвать поток класса, поэтому он безымянный')
+print(t2.ident)
+t2.start()
+t2.join()
